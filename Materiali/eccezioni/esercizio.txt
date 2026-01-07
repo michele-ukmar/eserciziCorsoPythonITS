@@ -1,0 +1,8 @@
+Esercizio: Gestione delle eccezioni e sollevamento di eccezioni
+
+Obiettivo:
+Creare un programma che simuli un sistema di gestione ordini per un negozio online. Il programma deve:
+1. Gestire errori comuni (es. input non validi, quantità negativa, prodotto non disponibile).
+2. Sollevare eccezioni personalizzate quando si verifica un errore.
+
+Usare solo sequenza di istruzioni e la console per input ed output.

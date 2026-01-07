@@ -1,0 +1,100 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2708
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Chalkboard;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww23340\viewh9640\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs28 \cf0 Una laboratorio di analisi genetiche deve fare il backup dei dati di sequenziamento su un disco di rete, nel fare le copie 
+\fs42 \
+
+\fs28 di backup per\'f2 non rispetta l\'92alberatura di origine.\
+I tipi di file copiati sono i file con estensione .fastq.gz e i file con nome samplesheet*.csv\
+\
+Fare una funzione che date due cartelle con alberature diverse sia in grado di verificare in modo certo 
+\fs42 \
+
+\fs28 che chi ha sviluppato lo scripti di backup non si sia dimenticato nessun file e si pu\'f2 procedere alla cancellazione \
+dei dati nel sequenziatore.\
+\
+Prestando attenzione a:\
+-i file possono avere stesso nome ma dimensione diversa ed essere in cartelle diverse di origine e di destinazione\
+-il file system \'e8 case sensitive\
+-oggetto di copia sono migliaia di file\
+-la verifica va fatta periodicamente ogni 24 ore\
+-considerare una lista di parole per esclusione dei file (POS,NEG,UNDETERMINED)\
+-chi controlla se tutto \'e8 ok non \'e8 un tecnico quindi al massimo apre un file per verificare se ci sono o non ci sono \
+errori e lo fa una tantum\
+-\'e8 necessario sapere dove si trovano i file non copiati nella cartella di origine \
+-una traccia di lavoro sarebbe l\'92ideale (un file di log)\
+-il file report dovrebbe rimanere disponibile per almeno un mese\
+-le cartelle di origine e di destinazione sono fisse e configurabili nello script\
+-verificare che le cartelle esistano\
+-i file hanno dimensioni dai 150mb in su, \'e8 un plus verificare che i file fastq non abbiano una dimensione \
+inferiore alla dimensione di allarme (150Mb) configurabile\
+\
+Quindi i parametri inclusi gli opzionali sono:\
+- cartella di origine: cartella_origine\
+- cartella di destinazione: cartella_destinazione\
+- cartella di destinazione del report: cartella_destinazione_report\
+opzionali:\
+- durata del file di report: periodo_ritenzione_report\
+- lista file da escludere: parole_di_esclusione\
+- dimensione di controllo: dimensione_minima\
+- cartella di destinazione dei log: cartella_destinazione_log\
+nome della funzione:\
+controllo_copia_file\
+nome modulo:\
+controllo_copia_file_modulo\
+nome modulo di test:\
+chiamata_controllo_copia_file_modulo\
+che deve contenere i parametri e la sola chiamata della funzione\
+\
+\'97CartellaOrigine\
+	|\'97\'97corsa 1\
+		|\'97\'97 dati_corsa\
+			- samplesheet_corsa1.csv\
+		|\'97-altri dati\
+	|\'97 corsa 2\
+		|\'97\'97 dati_corsa\
+			- samplesheet_corsa2.csv\
+		|\'97-altri dati\
+	|\'97 corsa 3\
+		|\'97\'97 dati_corsa\
+			-file1.fastq.gz\
+			- samplesheet_corsa3.csv\
+		|\'97-altri dati\
+	|\'97 corsa 3 - ripetuta\
+		|\'97\'97 dati_corsa\
+			-file1.fastq.gz\
+			- samplesheet_corsa3.csv\
+		|\'97-altri dati\
+\
+-CartellaDestinazione\
+	|\'97 backup\
+		|- 2022\
+			-gennaio\
+				|-dati corsa 1\
+					- samplesheet_corsa1.csv\
+				|-dati corsa 2\
+					- samplesheet_corsa2.csv\
+				|-dati corsa 3\
+					-file1.fastq.gz\
+					- samplesheet_corsa3.csv\
+				|-dati corsa 3 ripetuta\
+					-file1.fastq.gz\
+					- samplesheet_corsa3.csv\
+			|-dati corsa 10\
+				- samplesheet_corsa1.csv\
+			|-dati corsa 20\
+				- samplesheet_corsa2.csv\
+			|-dati corsa 30\
+				-file1.fastq.gz\
+				- samplesheet_corsa3.csv\
+			|-dati corsa 30 ripetuta\
+				-file1.fastq.gz\
+				- samplesheet_corsa3.csv\
+\
+\
+\
+}

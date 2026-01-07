@@ -1,0 +1,77 @@
+{
+  "player": {
+    "money": 597522.197439872,
+    "businesses": {
+      "lemonade": {
+        "id": "lemonade",
+        "name": "Stand di limonate",
+        "level": 87,
+        "base_cost": 10.0,
+        "base_income_per_sec": 0.5,
+        "cost_multiplier": 1.1,
+        "manager_hired": true,
+        "last_collected": 1762532570.072887
+      },
+      "news": {
+        "id": "news",
+        "name": "Giornale locale",
+        "level": 62,
+        "base_cost": 50.0,
+        "base_income_per_sec": 2.0,
+        "cost_multiplier": 1.12,
+        "manager_hired": true,
+        "last_collected": 1762532570.072887
+      },
+      "cafe": {
+        "id": "cafe",
+        "name": "Caffetteria",
+        "level": 55,
+        "base_cost": 200.0,
+        "base_income_per_sec": 8.0,
+        "cost_multiplier": 1.13,
+        "manager_hired": true,
+        "last_collected": 1762532570.072887
+      },
+      "shop": {
+        "id": "shop",
+        "name": "Negozio",
+        "level": 34,
+        "base_cost": 1000.0,
+        "base_income_per_sec": 40.0,
+        "cost_multiplier": 1.14,
+        "manager_hired": true,
+        "last_collected": 1762532570.072887
+      },
+      "factory": {
+        "id": "factory",
+        "name": "Fabbrica",
+        "level": 37,
+        "base_cost": 5000.0,
+        "base_income_per_sec": 200.0,
+        "cost_multiplier": 1.15,
+        "manager_hired": true,
+        "last_collected": 1762532570.072887
+      },
+      "tech": {
+        "id": "tech",
+        "name": "Startup tech",
+        "level": 25,
+        "base_cost": 20000.0,
+        "base_income_per_sec": 1200.0,
+        "cost_multiplier": 1.16,
+        "manager_hired": true,
+        "last_collected": 1762532570.072887
+      },
+      "cinema": {
+        "id": "cinema",
+        "name": "Cinema multiplex",
+        "level": 47,
+        "base_cost": 500.0,
+        "base_income_per_sec": 25.0,
+        "cost_multiplier": 1.13,
+        "manager_hired": true,
+        "last_collected": 1762532570.072887
+      }
+    }
+  }
+}

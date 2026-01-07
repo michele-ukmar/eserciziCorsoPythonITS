@@ -1,0 +1,125 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2708
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Chalkboard;\f1\fnil\fcharset0 HelveticaNeue;\f2\fnil\fcharset0 Monaco;
+}
+{\colortbl;\red255\green255\blue255;\red199\green203\blue211;\red52\green54\blue66;}
+{\*\expandedcolortbl;;\cssrgb\c81961\c83529\c85882;\cssrgb\c26667\c27451\c32941;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww51000\viewh28800\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs28 \cf0 # Importiamo la libreria os per lavorare con i file\
+import os\
+\
+# Funzione per caricare la griglia di lettere da un file di testo\
+def carica_griglia(nome_file):\
+    with open(nome_file, "r") as file:\
+        griglia = []\
+        for riga in file:\
+            riga = riga.strip().split()\
+            griglia.append(riga)\
+    return griglia\
+\
+# Funzione per caricare l'elenco di parole possibili da un file di testo\
+def carica_parole(nome_file):\
+    with open(nome_file, "r") as file:\
+        parole = []\
+        for riga in file:\
+            parola = riga.strip().lower()\
+            parole.append(parola)\
+    return parole\
+\
+# Funzione per generare tutte le possibili parole nella griglia di lettere\
+def genera_parole(griglia):\
+    parole = []\
+    righe = len(griglia)\
+    colonne = len(griglia[0])\
+    for i in range(righe):\
+        for j in range(colonne):\
+            # Parole orizzontali in avanti\
+            parola = ""\
+            for k in range(j, colonne):\
+                parola += griglia[i][k]\
+                if parola in parole:\
+                    continue\
+                parole.append(parola)\
+            # Parole orizzontali all'indietro\
+            parola = ""\
+            for k in range(j, -1, -1):\
+                parola += griglia[i][k]\
+                if parola in parole:\
+                    continue\
+                parole.append(parola)\
+            # Parole verticali in avanti\
+            parola = ""\
+            for k in range(i, righe):\
+                parola += griglia[k][j]\
+                if parola in parole:\
+                    continue\
+                parole.append(parola)\
+            # Parole verticali all'indietro\
+            parola = ""\
+            for k in range(i, -1, -1):\
+                parola += griglia[k][j]\
+                if parola in parole:\
+                    continue\
+                parole.append(parola)\
+    return parole\
+\
+# Funzione per trovare tutte le parole possibili nella griglia di lettere\
+def trova_parole(griglia, parole_possibili):\
+    parole_trovate = []\
+    for parola in parole_possibili:\
+        if parola in griglia:\
+            parole_trovate.append(parola)\
+    return parole_trovate\
+\
+# Funzione per calcolare il punteggio di una parola\
+def calcola_punteggio(parola):\
+    punteggio = len(parola)\
+    for lettera in parola:\
+        if lettera in ["q", "z"]:\
+            punteggio += 1\
+    if len(parola) >= 7:\
+        punteggio += 2\
+    return punteggio\
+\
+# Funzione principale\
+def main():\
+    # Carichiamo la griglia di lettere e l'elenco di parole possibili\
+    griglia = carica_griglia("griglia.txt")\
+    parole_possibili = carica_parole("parole.txt")\
+\
+    # Generiamo tutte le possibili parole nella griglia di lettere\
+    parole_griglia = genera_parole(griglia)\
+\
+    # Troviamo tutte le parole possibili nella griglia di lettere\
+    parole_trovate = trova_parole(parole_griglia, parole_possibili)\
+\
+    # Calcoliamo il punteggio di ogni parola trovata\
+    parole_punteggiate = \{\}\
+    for parola in parole_trovate:\
+        punteggio = calcola_punteggio(parola)\
+        parole_punteggiate[parola] = punteggio\
+\
+    # Ordiniamo le parole trovate per punteggio decrescente\
+    parole_ordinate = sorted(parole_punteggiate.items(), key=lambda x: x[1], reverse=True)\
+\
+    # Stampiamo le parole trovate con il relativo punteggio\
+    print("Parole trovate:")\
+    for parola, punteggio in parole_ordinate:\
+        print(f"\{parola\}: \{punteggio\}")\
+\
+    # Calcoliamo il punteggio totale\
+    punteggio_totale = sum(parole_punteggiate.values())\
+    print(f"\\nPunteggio totale: \{punteggio_totale\}")\
+\
+if __name__ == "__main__":\
+    main()\
+\
+\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs32 \cf2 \cb3 \expnd0\expndtw0\kerning0
+In questo completamento del codice abbiamo aggiunto la funzione 
+\f2\fs28 calcola_punteggio
+\f1\fs32  per calcolare il punteggio di ogni parola trovata nella griglia di lettere. Successivamente, abbiamo utilizzato questa funzione per calcolare il punteggio di ogni parola trovata e abbiamo ordinato le parole per punteggio decrescente. Infine, abbiamo stampato tutte le parole trovate con il relativo punteggio e il punteggio totale ottenuto.}

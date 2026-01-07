@@ -1,0 +1,47 @@
+vettore = [None] * 10
+
+for i in range (0,10):
+    vettore [i] = int(input("inserisci un numero: "))
+    
+for i in range (10, 0, -1):
+    print(vettore[i-1])
+
+ricerca = int(input("inserisci un numero da cercare: "))
+trovato = False
+for i in range (0,10):
+    if vettore[i] == ricerca:
+        trovato = True
+        print("numero trovato in posizione", i)
+    if trovato == True:
+        break
+
+vettoreB = [None] * 10
+i = 0
+while True:
+    print (i)
+    value = int(input("inserisci un numero per il secondo vettore: "))
+    if value % 2 == 0:
+        if i % 2 == 0:
+            if vettoreB[i] is not None:
+                continue
+            else:
+                vettoreB[i] = value
+                i += 1
+
+        else:
+            continue
+    if value % 2 != 0:
+        if i % 2 != 0:
+            if vettoreB[i] is not None:
+                continue
+            else:
+                vettoreB[i] = value
+                i += 1
+        else:
+            continue
+    if i == 10:
+        break
+
+for i in range (0,10):
+    print(vettoreB[i], " posizione del valore" , i)
+

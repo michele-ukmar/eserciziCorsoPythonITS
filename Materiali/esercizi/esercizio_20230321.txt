@@ -1,0 +1,35 @@
+Data una cartella di una corsa di sequenziamento ogni file di un campione si chiama lane
+
+/root/corsa1/
+campione_1_corsaX_1_r001_L1.fastq.gz
+campione_1_corsaX_1_r001_L2.fastq.gz
+camp_2_corsaX_r001_L1.fastq.gz
+camp_2_corsaX_r001_L12fastq.gz
+cpo_2_corsaX_r001_L1.fastq.gz
+cpo_2_corsaX_r001_L2.fastq.gz
+
+creare un file che riporti un elenco così strutturato, che va salvato nella cartella della corsa.
+
+nome_campione;lane1;lane2
+camp_2;/root/corsa1/campione_1_corsaX_r001_L1.fastq.gz;/root/corsa1/campione_corsaX_1_r001_L2.fastq.gz
+campione_1;/root/corsa1/camp_2_corsaX_r001_L1.fastq.gz;/root/corsa1/campione_corsaX_1_r001_L2.fastq.gz
+cpo_2;/root/corsa1/cpo_corsaX_2_r001_L1.fastq.gz;/root/corsa1/cpo_corsaX_2_r001_L2.fastq.gz
+
+Lane1 e Lane2 devono essere i percorsi assoluti dei file
+
+Verificare sela corsa è a doppia lane o a lane singola, se la corsa è doppia lane per ogni campione deve esistere 
+la coppia di file altrimenti solleva errore.
+
+Risultati attesi:
+1) documento in linguaggio naturale dell’algoritmo (passi)
+2) documento con i test per verificare quanto si scrive
+3) documento in linguaggio naturale integrato con le strutture del codice
+4) codice
+
+
+Creare una funzione dal nome
+CREA_SAMPLESHEET
+con parametro
+CARTELLA_CORSA
+che restituisce solo un file samplesheet.csv
+nella cartella della corsa

@@ -1,0 +1,23 @@
+Scrivi una funzione che accetti una lista di numeri e restituisca una lista contenente solo i numeri pari.
+
+Scrivi una funzione che accetti una lista di parole e restituisca una lista contenente solo le parole che iniziano con una lettera maiuscola.
+
+Scrivi una funzione che accetti un dizionario e una lista di chiavi e restituisca un nuovo dizionario contenente solo le coppie chiave-valore con chiavi presenti nella lista.
+
+Scrivi una funzione che accetti una lista di numeri e restituisca il numero che appare più spesso nella lista. In caso di parità, restituisci il primo numero che appare più volte.
+
+Scrivi una funzione che accetti un numero intero e restituisca una lista di numeri primi minori o uguali al numero intero.
+
+Scrivi una funzione che accetti un argomento e restituisca una nuova funzione che moltiplica quell'argomento per un numero prefissato.
+
+Scrivi una funzione che accetti un dizionario come argomento e restituisca la lista delle chiavi del dizionario.
+
+Scrivi una funzione che accetti due stringhe e restituisca una nuova stringa che contiene solo i caratteri comuni alle due stringhe, senza ripetizioni.
+
+Scrivi una funzione che accetti una lista di parole e restituisca una lista contenente solo le parole che contengono tutte le vocali (a, e, i, o, u), senza ripetizioni.
+
+Scrivi una funzione che accetti un dizionario e restituisca un nuovo dizionario che contiene solo le coppie chiave-valore in cui il valore è maggiore o uguale alla chiave.
+
+Scrivi una funzione che accetti una stringa e restituisca una nuova stringa in cui le parole sono ordinate in ordine alfabetico inverso.
+
+Scrivi una funzione che accetti un dizionario e restituisca un nuovo dizionario che contiene solo le coppie chiave-valore in cui il valore è maggiore o uguale alla chiave.

@@ -1,0 +1,15 @@
+generate_numbers = [0,1,2,3,4,5,6]
+
+my_iter = iter(generate_numbers)
+print(next(my_iter))
+print(next(my_iter))
+print(next(my_iter))
+print(next(my_iter))
+print(next(my_iter))
+print(next(my_iter))
+print(next(my_iter))
+print(next(my_iter))
+print(next(my_iter))
+print(next(my_iter))
+
+
